@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+/*
+escape() : 한글과 같이 2byte로 표현되는 유니코드를 UFT-8로 인코딩할때 사용.
+    인코딩없이 전송시 깨짐 현상이 발생될 수 있다.
+    영문이나 숫자는 1byte인 아스키코드로 표현되므로 인코딩의 대상이 되지
+    않는다.
+unescape() : 인코딩 된 값을 디코딩할때 사용한다.
+*/
+    document.write("<h3>escape()/unescape()함수</h3>");
+    var escapeStr = window.escape("안녕 Hello 1234");
+    document.write("인코딩:"+ escapeStr +"<br/>");
+    document.write("디코딩:"+ unescape("%uC548%uB155%20Hello%201234")
+            +"<br/>");
+
+    /*
+    eval() : 문자열로 주어진 코드를 실제 JavaScript 코드로 인식하여 실행해주는
+        함수. 연산식이 주어지면 연산의 결과를 반환해 준다.
+    */
+    document.write("<h3>eval()함수</h3>");
+    document.write("alert('나는 alert함수다');");
+    eval("alert('나는 alert함수다. eval()안에 있다.');");
+    document.write("<br/>1+2+3<br/>");
+    document.write(eval("1+2+3"));
+
+    document.write("<h3>isNaN()함수</h3>");
+    isNaN("12A") ? document.write("숫자형식아님") :
+            document.write("숫자형식임");
+    isNaN("12") ? document.write("<br/>숫자형식아님") :
+            document.write("<br/>숫자형식임")
+
+    document.write("<h3>parseInt()함수</h3>");
+    document.write("12A를 숫자로 변환:"+ parseInt("12A"));
+    document.write("<br/>12A를 숫자로 변환:"+ parseInt("A12"));
+    document.write("<br/>12A34를 숫자로 변환:"+ parseInt("12A34"));
+</script>
+</head>
+<body>
+    
+</body>
+</html>
